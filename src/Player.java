@@ -3,17 +3,22 @@ import java.util.ArrayList;
 /**
  * Created by KevinBozic on 2/3/16.
  */
-public class Player {
-    String name;
+public class Player extends Character {
     String weapon;
     String location;
     ArrayList<String> items = new ArrayList<>();
 
 
+    public Player() {
+        this.health = 100;
+        this.damage = 40;
+    }
+
+
     public void chooseName() {
         System.out.println("What is your name?");
         name = Game.nextLine();
-        System.out.println("Welcome, " + name);
+        System.out.printf("Welcome, %s\n", name);  //souf
     }
 
     public void chooseWeapon() throws Exception {
@@ -43,11 +48,23 @@ public class Player {
     }
 
     public void findItem(String item) {
-        System.out.println("You found a " + item + "! Pick it up? [y/n]");
+        System.out.printf("You found a %s! Pick it up? [y/n]\n", item);  //souf
         String answer = Game.nextLine();
         if (answer.equalsIgnoreCase("y")) {
             items.add(item);
             System.out.println("You picked up an item!");
         }
+    }
+
+    public String getWeapon() {
+        return weapon;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public ArrayList<String> getItems() {
+        return items;
     }
 }
