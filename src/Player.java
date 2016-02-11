@@ -35,7 +35,7 @@ public class Player extends Character {
     }
 
     public void chooseLocation() throws Exception {
-        System.out.println("Choose your location [forest/tunnel]");
+        System.out.println("Choose your location!!!!!!!!!!! [forest/tunnel]");
         location = Game.nextLine();
 
         if (location.equalsIgnoreCase("forest")) {
